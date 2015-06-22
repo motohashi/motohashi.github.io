@@ -176,30 +176,72 @@
             </ol>
           </section>
           <section>
-            <h3>Teratailでの利用方法</h3>
+            <h3>teratailでの利用方法</h3>
             <p style="font-size:36px">関連したコンテンツの表示</p>
             <p>
-befor: タグの一致度検索<br>
+before: タグの一致度検索<br>
 →文字列が一致しない<br>
 after: more like this Query<br>
 →文字列で一致させる</p>
             <p style="color:#D3D3D3;font-size:12px">結果をレーベンシュタイン距離で測定しようとしたけど日本語微妙</p>
           </section>
           <section>
-            <h3>Teratailでの利用方法</h3>
+            <h3>teratailでの利用方法</h3>
             <p style="font-size:36px">実装予定のもの</p>
             <ul>
               <li>サイト内検索機能</li>
               <li>ユーザ検索</li>
               <li>投稿時類似質問検索機能</li>
             </ul>
-            <p style="font-size:36px">ログ系で作りたいもの</p>
+            <p style="font-size:42px">ログ系で作りたいもの</p>
             <ul>
               <li>ログ分析基盤の独自実装</li>
               <li>行動によるユーザ属性のgrouping</li>
               <li>集計業務の自動化</li>
             </ul>
             <p style="color:#D3D3D3;font-size:12px">作りたいっていうのはタダ</p>
+          </section>
+          <section>
+            <h3>teratailでの利用方法</h3>
+            <p style="font-size:42px">サイト内検索機能</p>
+            <p>全文検索</p>
+            <p>タグでの一致、文言にweightを設定することによって<br>RDBMS単体で実現できない検索を可能にする</p>
+          </section>
+          <section>
+            <h3>teratailでの利用方法</h3>
+            <p style="font-size:42px">ユーザ検索</p>
+            <p>これも全文検索</p>
+            <p>名前やタグでの検索だけでなく</p>
+            <ul>
+              <li>登録情報が似たようなユーザ</li>
+              <li>登録時期が似たようなユーザ</li>
+              <li>行動ログが似たようなユーザ</li>
+            </ul>
+            <p>での検索も可能</p>
+          </section>
+          <section>
+            <h3>teratailでの利用方法</h3>
+            <p style="font-size:42px">投稿時類似質問検索機能</p>
+            <p>これも全文検索</p>
+            <p>重複コンテンツが出来ないようにリアルタイムでの警告を出す</p>
+          </section>
+          <section>
+            <h3>teratailでの利用方法</h3>
+            <p style="font-size:42px">ログ分析基盤の独自実装</p>
+            <ul>
+              <li>現行のログ基盤を保持したまま実装する</li>
+              <li>データ量によっては高速化が可能</li>
+              <li>ローカライズによる分析の工数削減</li>
+            </ul>
+          </section>
+          <section>
+            <h3>teratailでの利用方法</h3>
+            <p style="font-size:42px">行動によるユーザ属性のgrouping</p>
+            <ul>
+              <li>Aggregations APIを利用した検索</li>
+              <li>上位N%のユーザのXXXを検索などの検索容易</li>
+              <li>継続率分析などの可視化</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -301,7 +343,7 @@ after: more like this Query<br>
             <p>type(schema)づくりについて</p>
             <ul>
               <li>typeはRDBMSでいうところのTable</li>
-              <li>apatche2, apache_error,tsv,jsonなどの<br>フォーマッターを利用して収集(fluentdがすごい)</li>
+              <li>apache2, apache_error,tsv,jsonなどの<br>フォーマッターを利用して収集(fluentdがすごい)</li>
               <li>Elasticsearch側でmapping指定しなくても<br>適当に集計できる</li>
               <li>とりあえずデータ流すだけで使える</li>
             </ul>
