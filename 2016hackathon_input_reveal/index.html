@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>温泉はっかそん - インプットセミナー</title>
+    <meta name="description" content="チーム開発、ハッカソンの心得、テクニック">
+    <meta name="author" content="Motohashi Yusuke">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>温泉ハッカソン<br>インプットセミナー</h2>
+          <h4>Technology Media Lab.</h4>
+          <p>
+            <small>Created by <a href="https://teratail.com/mhashi" class="miusuke">Motohashi Yusuke</a></small>
+          </p>
+        </section>
+        <section>
+          <h2>what is it?</h2>
+          <p><span class="fragment highlight-red">チーム</span>開発の話をします</p>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li><span class="fragment highlight-red">自己紹介</span></li>
+              <li>開発タスク管理</li>
+              <li>データ設計</li>
+              <li>ソースコード管理</li>
+              <li>コミュニケーション</li>
+              <li>ひとこと</li>
+              <li>時間が余ったら</li>
+            </ol>
+          </section>
+          <section>
+            <h3>自己紹介</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>key</th>
+                  <th>value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>名前</td>
+                  <td>本橋 佑介(もとはし ゆうすけ)</td>
+                </tr>
+                <tr>
+                  <td>所属</td>
+                  <td><p class="fragment grow">Technology Media Lab.</p></td>
+                </tr>
+                <tr>
+                  <td>好きな色</td>
+                  <td><span class="fragment highlight-red">あか</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li>自己紹介</li>
+              <li><span class="fragment highlight-red">開発タスク管理</span></li>
+              <li>データ設計</li>
+              <li>ソースコード管理</li>
+              <li>コミュニケーション</li>
+              <li>ひとこと</li>
+              <li>時間が余ったら</li>
+            </ol>
+          </section>
+          <section  id="fragments">
+            <h3>開発タスク管理</h3>
+            <p style="font-size:48px">よく使われるtool</p>
+            <ul>
+              <li>trello</li>
+              <li>waffle.io</li>
+              <li>redmine</li>
+              <li>backlog</li>
+              <li>github issue</li>
+            </ul>
+            <p class="fragment">必要なのは一覧視できること</p>
+          </section>
+          <section  id="fragments">
+            <h3>開発タスク管理</h3>
+            <p style="font-size:48px">ここで大事なのはほんとうにちょっと</p>
+            <ul>
+              <li>一覧視できるか</li>
+              <ul>
+                <li>ぱっと見てわからないものはじっくり見ない</li>
+              </ul>
+              <li>何より一番大事なのは優先度</li>
+              <ol>
+                <li>成立させるために絶対に必要なもの</li>
+                <li>あったら嬉しいもの</li>
+                <li>おまけの小ネタ</li>
+              </ol>
+            </ul>
+          </section>
+          <section>
+            <h3>開発タスク管理</h3>
+            <p style="font-size:48px">かんばん</p>
+            <img src="./img/Simple_Task_Kanban.jpg" height="360px">
+            <p class="fragment current-visible" sylle="top:300px"><span style="font-size:32px"><span style="color:rgb(255, 0, 0)">やること、やっていること、やったことが一目瞭然</span></span></p>
+          </section>
+          <section>
+            <h3>開発タスク管理</h3>
+            <p style="font-size:48px">まとめると…</p>
+            <ul>
+              <li>優先順位や</li>
+              <li>タスクの一覧を</li>
+              <li>一覧視できれば</li>
+              <li>なんでもいい</li>
+            </ul>
+            <p class="fragment current-visible">使い慣れてなければ付箋で看板が鉄板</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li>自己紹介</li>
+              <li>開発タスク管理</li>
+              <li><span class="fragment highlight-red">データ設計</span></li>
+              <li>ソースコード管理</li>
+              <li>コミュニケーション</li>
+              <li>ひとこと</li>
+              <li>時間が余ったら</li>
+            </ol>
+          </section>
+          <section>
+            <h3>データ設計</h3>
+            <ul>
+              <li>成果物のはなんでもいい</li>
+              <ul>
+                <li>text(query)</li>
+                <li>spreadsheet</li>
+                <li>workbench</li>
+                <li>ER図</li>
+              </ul>
+              <li>データは基本的に全員が意識するもの<br>最初に決めてしまう</li>
+              <li>ワイヤー決めた段階で決めるとみんなが喜ぶ</li>
+            </ul>
+            <p style="color:#D3D3D3;font-size:12px">正規化を出来るだけやると急な仕様変更が楽だったりする</p>
+          </section>
+          <section>
+            <h3>データ設計</h3>
+            <p style="font-size:36px">外部データを利用する場合</p>
+            <ul>
+              <li><a href='http://linkdata.org/work?sort=download#workList'>オープンデータ</a></li>
+              <ul><li>加工しないで利用する</li></ul>
+              <li>スクレイピングによるデータ収集</li>
+              <ul><li>媒体により構造が違うので加工が必要</li></ul>
+            </ul>
+            <p class="fragment" sylle="top:300px"><span style="font-size:32px"><span style="color:rgb(255, 0, 0)">※データはあっても取り回し方に時間がかかったりするので注意</span></span></p>
+            <p class="fragment" sylle="top:300px"><span style="font-size:32px"><span style="color:rgb(255, 0, 0)">※サンプルで魅力が伝わるものなのかデータがないと成立しないものなのかはちゃんと判断して時間を使おう</span></span></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li>自己紹介</li>
+              <li>開発タスク管理</li>
+              <li>データ設計</li>
+              <li><span class="fragment highlight-red">ソースコード管理</span></li>
+              <li>コミュニケーション</li>
+              <li>ひとこと</li>
+              <li>時間が余ったら</li>
+            </ol>
+          </section>
+          <section>
+            <h3>ソースコード管理</h3>
+            <p style="font-size:36px">バージョン管理</p>
+            <p>GitHub</p>
+            <ul>
+              <li class='fragment'>gitサーバ立てなくて済む</li>
+              <li class='fragment'>mergeが楽</li>
+              <li class='fragment'>mergeが楽</li>
+              <li class='fragment'>mergeが楽</li>
+            </ul>
+            <p class='fragment'>使ったこと無くてもGUIツールがあるので使ってしまおう</p>
+          </section>
+          <section>
+            <h3>素材の管理</h3>
+            <ul>
+              <li>GoogleDrive</li>
+              <li>DropBox</li>
+              <li>なんでもいい</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li>自己紹介</li>
+              <li>開発タスク管理</li>
+              <li>データ設計</li>
+              <li>ソースコード管理</li>
+              <li><span class="fragment highlight-red">コミュニケーション</span></li>
+              <li>ひとこと</li>
+              <li>時間が余ったら</li>
+            </ol>
+          </section>
+          <section>
+            <h3>コミュニケーション</h3>
+            <p style="font-size:36px">チャットツール</p>
+            <ul>
+              <li>slack</li>
+              <li>chatwork</li>
+              <li>gitter</li>
+              <li class='fragment'>口頭</li>
+            </ul>
+            <p class='fragment'>口頭のほうがコミュニケーションは早い</p>
+            <p class='fragment'>が、大体言ったことは覚えているが聞いたことは忘れる</p>
+            <p class='fragment' style="color:rgb(255, 0, 0)">チャットを積極的にログ代わりに使おう</p>
+          </section>
+          <section>
+            <h3>素材の管理</h3>
+            <ul>
+              <li>GoogleDrive</li>
+              <li>DropBox</li>
+              <li>なんでもいい</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li>自己紹介</li>
+              <li>開発タスク管理</li>
+              <li>データ設計</li>
+              <li>ソースコード管理</li>
+              <li>コミュニケーション</li>
+              <li><span class="fragment highlight-red">ひとこと</span></li>
+              <li>時間が余ったら</li>
+            </ol>
+          </section>
+          <section>
+            <h2>ひとこと</h2>
+            <h2><b>合意形成</b>が一番大事</h2>
+          </section>
+          <section>
+            <p>チームが全員「面白い」と思うことは難しいけど、チームが全員「これはすごい」と思うことは可能</p>
+          </section>
+          <section>
+            <p>「課題」を「解決する」この手法って「すごい」、の方向性だけきっちり合わせて、振り返らずに先に進めよう</p>
+          </section>
+          <section>
+            <p style="font-size:12px;color:#DDD">ちなみに全員で居る時に話を混ぜ返すのはあんまり楽しい事じゃないけど、一人で居る時に基本に立ち返るのは大事なのでそのへん上手くやろう</p>
+          </section>
+          <section data-background="#BBB">
+            <p style='font-size:60px;'>I never said it would be easy,</p>
+            <p style='font-size:60px;'>we only said it would be worth it.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Contents</h2>
+            <ol>
+              <li>自己紹介</li>
+              <li>開発タスク管理</li>
+              <li>データ設計</li>
+              <li>ソースコード管理</li>
+              <li>コミュニケーション</li>
+              <li>ひとこと</li>
+              <li><span class="fragment highlight-red">時間が余ったら</span></li>
+            </ol>
+          </section>
+          <section>
+            <h3>細かいTips</h3>
+            <p>要らないものは作らない</p>
+            <ul>
+              <li>ログインははじめは作らない</li>
+              <li>スライドでのプレゼンよりもデモ</li>
+              <li>あるもの全部つかって楽をしよう</li>
+              <li>開発環境はDockerやVagrantで配布されてるものをそのまま使う</li>
+              <li>画像やデザインはこだわらずに遊ぼう</li>
+              <li>画像やデザインはこだわらずに遊ぶ</li>
+            </ul>
+          </section>
+          <section>
+            <h3>アカウントを共有しよう</h3>
+            <ul>
+              <li class="fragment">LINE</li>
+              <li class="fragment">Facebook</li>
+            </ul>
+            <p class="fragment">そんなものは今すぐ捨てよう</p>
+            <ul>
+              <li class="fragment">GitHub</li>
+              <li class="fragment">Google</li>
+            </ul>
+            <p class="fragment">「コミュニケーションはたくさんのソースコードと少しのコメント、そしてこころばかりのreaction☝🙅👍があればいい」って偉い人が言ってた</p>
+          </section>
+        </section>
+        <section>
+          <h2>ご静聴ありがとうございました</h2>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <link rel="stylesheet" href="css/pp.css">
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
